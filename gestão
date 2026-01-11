@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - Gráfica em Casa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #ff7a18, #ffb347);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 420px;
+            background: #ffffff;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        p {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1ebe5d;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🖨️🔥 Gráfica em Casa</h1>
+    <p>Cadastro para o curso prático</p>
+
+    <form onsubmit="enviarWhatsApp(); return false;">
+        <label>Nome Completo</label>
+        <input type="text" id="nome" required placeholder="Digite seu nome">
+
+        <label>WhatsApp</label>
+        <input type="tel" id="telefone" required placeholder="+244 9XX XXX XXX">
+
+        <label>Modalidade</label>
+        <select id="modalidade" required>
+            <option value="">Selecione</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Online">Online</option>
+        </select>
+
+        <button type="submit">📲 Enviar Cadastro</button>
+    </form>
+
+    <div class="footer">
+        Apenas 5 vagas disponíveis
+    </div>
+</div>
+
+<script>
+function enviarWhatsApp() {
+    var nome = document.getElementById("nome").value;
+    var telefone = document.getElementById("telefone").value;
+    var modalidade = document.getElementById("modalidade").value;
+
+    var numeroDestino = "244932590171";
+
+    var mensagem = 
+        "📋 *NOVO CADASTRO - GRÁFICA EM CASA*%0A%0A" +
+        "*Nome:* " + nome + "%0A" +
+        "*Telefone:* " + telefone + "%0A" +
+        "*Modalidade:* " + modalidade;
+
+    var url = "https://wa.me/" + numeroDestino + "?text=" + mensagem;
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
